@@ -37,13 +37,13 @@ const UsersList = () => {
 							<td>Ação</td>
 						</thead>	
 						<tbody>
-							{users.map(users => {
+							{users.map(user => {
 									return (
-									<tr>
-										<td key={users.id} >{users.id}</td>
-										<td>{users.username}</td>
-										<td>{users.email}</td> 
-										<td>
+									<tr key={user.id}>
+										<td>{user.id}</td>
+										<td>{user.username}</td>
+										<td>{user.email}</td> 
+										<td>Edit
 											{/* <button onClick={() => handleEditButton(users)}>Editar</button>
 											<button onClick={() => handleDeleteButton(users.id)}>Deletars</button> */}
 											</td>
