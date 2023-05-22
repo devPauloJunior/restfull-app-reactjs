@@ -1,16 +1,18 @@
 import React from 'react'
 
-export default function AddUSer({handleAddSubmit, handleCancelBtn}) {
+const AddUser({handleAddSubmit, handleCancelButton}) = () => {
   return (
     <>
-    <h3>ADD FORM:</h3>
+    <h3>Adicinar Usário:</h3>
     <form onSubmit={handleAddSubmit}>
-        User Name <input type='text' name='username' />
+        Nome de Usuário <input type='text' name='username' />
         E-mail <input type='text' name='email' />
         <button type='submit'>ADD</button>
-        <button onClick={handleCancelBtn}>Cancel</button>
+        <button onClick={handleCancelButton}>Cancel</button>
 
     </form>
     </>
   )
 }
+
+export default AddUser

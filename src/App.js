@@ -1,7 +1,7 @@
 import './App.css';
 import UsersList from './Components/UsersList';
 
-function App() {
+const App = () => {
   return (
    <>
    <UsersList />

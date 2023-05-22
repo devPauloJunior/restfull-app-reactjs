@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { getusers, addusers, editusers, deleteusers} from '../Service/ApiService'
-import AddUsers from './AddUsers'
-import EditUsers from './EditUsers'
+import { getusers, adduser, edituser, deleteuser} from '../Service/ApiService'
+import AddUser from './AddUsers'
+import EditUser from './EditUsers'
 
-export default function UsersList() {
+const UsersList2 = () => {
 
 const [users, setUsers] = useState([])
 const [showAddUsersForm, setShowAddUsersForm] = useState(false)
@@ -13,14 +13,14 @@ const [selectedEditData, setSelectedEditData] = useState()
 useEffect(() => {
     let mount = true
     getusers()
-    .then(res => {console.log("res from api", res)
+    .then(res => {console.log("Response da API:", res)
         setUsers(res)
         return() => mount = false
     })
 }, [])
 
 const handleAddSubmit = (e) => {
-    addusers(e.target)
+    adduser(e.target)
     .then(res => {
         setUsers(res)
     })
@@ -62,11 +62,16 @@ const handleDeleteBtn = (id) => {
         </thead>
         <tbody>
             {users.map(users => {
-                return <tr key={users.users_id}>
-                <td>{users.username}</td>
-                <td>{users.email}</td>
-                <td><button onClick={()=>handleEditBtn(users)}>Edit</button> <button onClick={()=>handleDeleteBtn(users.users_id)}>Delete</button></td>
-            </tr>
+                return (
+                    <tr>
+					<td key={users.id}>{users.id}</td>
+                    <td>{users.username}</td>
+                    <td>{users.email}</td>
+                    <td>
+                        <button onClick={()=>handleEditBtn(users)}>Edit</button>
+                        <button onClick={()=>handleDeleteBtn(users.id)}>Delete</button>
+                    </td>
+            </tr>)
             })}
             
         </tbody>
@@ -77,3 +82,5 @@ const handleDeleteBtn = (id) => {
     </>
   )
 }
+
+export default UsersList2
