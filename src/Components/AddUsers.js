@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddUser({handleAddSubmit, handleCancelButton}) = () => {
+const AddUsers = ({handleAddSubmit, handleCancelButton}) => {
   return (
     <>
     <h3>Adicinar Usário:</h3>
@@ -15,4 +15,4 @@ const AddUser({handleAddSubmit, handleCancelButton}) = () => {
   )
 }
 
-export default AddUser
+export default AddUsers

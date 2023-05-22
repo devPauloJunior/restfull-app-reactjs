@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getusers, adduser } from '../Service/ApiService'
-import AddUser from './AddUser';
+import AddUsers from './AddUsers';
 
 const UsersList = () => {
 	const [ users, setUsers ] = useState([])
@@ -22,7 +22,7 @@ const UsersList = () => {
 		})
 	}
 
-	const handleCancelButton() {
+	function handleCancelButton() {
 		setShowAddUserForm(false)
 	}
 
@@ -52,7 +52,7 @@ const UsersList = () => {
 						</tbody>	
 			</table>
 			<button onClick={() => setShowAddUserForm(true)}>Adicionar Usuário</button>
-			{showAddUserForm && <AddUser handleAddSubmit={handleAddSubmit} handleCancelButton = {handleCancelButton} />}
+			{showAddUserForm && <AddUsers handleAddSubmit={handleAddSubmit} handleCancelButton = {handleCancelButton} />}
 		</>
 )}
 
