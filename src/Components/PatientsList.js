@@ -28,7 +28,7 @@ const PatientsList = () => {
 
 	return (
         <>
-            <h3>USERS LIST</h3>
+            <h3>LISTA DE PACIENTES</h3>
 			<table border={"2px"} cellPadding={"5px"}>
 						<thead>
 							<tr>
