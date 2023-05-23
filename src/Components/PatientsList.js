@@ -33,8 +33,8 @@ const PatientsList = () => {
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Nome do Paciente:</th>
-								<th>Sobrenome do Paciente:</th>
+								<th>Nome do Paciente</th>
+								<th>Sobrenome do Paciente</th>
 								<th>Tipo Sanguineo</th>
 								<th>Ação</th>
 							</tr>
