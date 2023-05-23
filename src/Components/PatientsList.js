@@ -35,7 +35,7 @@ const PatientsList = () => {
 								<th>ID</th>
 								<th>Nome do Paciente</th>
 								<th>Sobrenome do Paciente</th>
-								<th>Tipo Sanguineo</th>
+								<th>Tipo Sanguíneo</th>
 								<th>Ação</th>
 							</tr>
 						</thead>	
