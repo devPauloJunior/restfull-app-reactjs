@@ -1,17 +1,17 @@
 import React from 'react'
 
-const EditUsers = ({handleEditSubmit, selectedEditData}) => {
+const EditPatients = ({handleEditSubmit, selectedEditData}) => {
   return (
     <>
-    <h3>EDIT FORM:</h3>
+    <h3>EDITAR PACIENTES:</h3>
     <form onSubmit={(e)=>handleEditSubmit(e,selectedEditData.patient_id)}>
-        User Name <input type='text' name='username' defaultValue={selectedEditData.username}/>
-        E-mail <input type='text' name='email' defaultValue={selectedEditData.email} />
-        
-        <button type='submit'>EDIT</button>
+      Nome do Paciente<input type='text' name='patient_first_name' defaultValue={selectedEditData.patient_first_name}/>
+      Sobrenome do Paciente <input type='text' name='patient_last_name' defaultValue={selectedEditData.patient_last_name} />
+      Tipo Sanguíneo <input type='text' name='patient_type_blood' defaultValue={selectedEditData.patient_type_blood} />
+      <button type='submit'>Editar Paciente</button>
     </form>
     </>
   )
 }
 
-export default EditUsers
+export default EditPatients

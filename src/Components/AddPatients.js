@@ -7,7 +7,7 @@ const AddPatients = ({handleAddSubmit, handleCancelButton}) => {
     <form onSubmit={handleAddSubmit}>
         Nome do Paciente <input type='text' name='patient_first_name' />
         Sobrenome do Paciente <input type='text' name='patient_last_name' />
-        Tipo Sanguineo <input type='text' name='patient_type_blood' />
+        Tipo Sanguíneo <input type='text' name='patient_type_blood' />
         <button type='submit'>ADD</button>
         <button onClick={handleCancelButton}>Cancel</button>
     </form>
