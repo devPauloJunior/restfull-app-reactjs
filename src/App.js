@@ -1,12 +1,10 @@
 import './App.css';
-// import UsersList from './Components/UsersList';
-import PatientsList from './Components/PatientsList';
+import ListPatients from './Components/ListPatients';
 
 const App = () => {
   return (
    <>
-   {/* <UsersList /> */}
-   <PatientsList />
+   <ListPatients />
    </>
   );
 }
