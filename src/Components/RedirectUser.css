@@ -1,0 +1,7 @@
+h1 { font-size: 3.5em; }
+
+.redirect p { margin-bottom: 2em; color:blue; }
+
+.redirect button { background-color: blue ; color: white; padding: 0 45px;  border: 2px solid gray; border-radius: 25px; height: 50px; font-weight: bold; font-size: 1.2em; cursor: pointer; transition: .4s; }
+
+.redirect button:hover { background-color: #0923AF; }

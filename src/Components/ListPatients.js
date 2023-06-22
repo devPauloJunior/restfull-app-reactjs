@@ -3,7 +3,7 @@ import { getpatients, addpatients, editpatients, deletepatients } from '../Servi
 import AddPatients from './AddPatients';
 import EditPatients from './EditPatients';
 
-const PatientsList = () => {
+const ListPatients = () => {
 	const [ patients, setPatients ] = useState([])
 	const [ showAddPatientsForm, setShowAddPatientsForm ] = useState(false)
 	const [ showEditPatientsForm, setShowEditPatientsForm ] = useState(false)
@@ -87,4 +87,4 @@ const PatientsList = () => {
         )
     }
 
-export default PatientsList
+export default ListPatients
