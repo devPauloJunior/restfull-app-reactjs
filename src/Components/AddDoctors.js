@@ -1,13 +1,13 @@
 import React from 'react'
 
-const AddPatients = ({handleAddSubmit, handleCancelButton}) => {
+const AddDoctors = ({handleAddSubmit, handleCancelButton}) => {
   return (
     <>
-    <h3>Adicinar Paciente:</h3>
+    <h3>Adicinar Doctor:</h3>
     <form onSubmit={handleAddSubmit}>
-        Nome do Paciente <input type='text' name='patient_first_name' />
-        Sobrenome do Paciente <input type='text' name='patient_last_name' />
-        Tipo Sanguíneo <input type='text' name='patient_type_blood' />
+        Nome do Doctors <input type='text' name='doctor_first_name' />
+        Sobrenome do Doctors <input type='text' name='doctor_last_name' />
+        Tipo Sanguíneo <input type='text' name='doctor_type_blood' />
         <button type='submit'>ADD</button>
         <button onClick={handleCancelButton}>Cancel</button>
     </form>
@@ -15,4 +15,4 @@ const AddPatients = ({handleAddSubmit, handleCancelButton}) => {
   )
 }
 
-export default AddPatients
+export default AddDoctors

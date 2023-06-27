@@ -3,7 +3,7 @@ import { getpatients, addpatients, editpatients, deletepatients } from '../Servi
 import AddPatients from './AddPatients';
 import EditPatients from './EditPatients';
 
-const ListPatients = () => {
+const ListPatients = ( { tipoDeAcesso } ) => {
 	const [ patients, setPatients ] = useState([])
 	const [ showAddPatientsForm, setShowAddPatientsForm ] = useState(false)
 	const [ showEditPatientsForm, setShowEditPatientsForm ] = useState(false)
@@ -20,6 +20,7 @@ const ListPatients = () => {
 	}, [])
 
 	const handleAddSubmit = (e) => {
+		e.preventDefault();
 		addpatients(e.target)
 		.then(res => {
 			setPatients([res])
@@ -55,6 +56,7 @@ const ListPatients = () => {
 	return (
         <>
             <h3>LISTA DE PACIENTES</h3>
+			<p>Seja bem vindo <strong>{ tipoDeAcesso }</strong></p>
 			<table border={"2px"} cellPadding={"5px"}>
 						<thead>
 							<tr>
@@ -62,6 +64,7 @@ const ListPatients = () => {
 								<th>Nome do Paciente</th>
 								<th>Sobrenome do Paciente</th>
 								<th>Tipo Sanguíneo</th>
+								<th>Meu Doutor</th>
 								<th>Ação</th>
 							</tr>
 						</thead>	
@@ -73,6 +76,7 @@ const ListPatients = () => {
 										<td>{patient.patient_first_name}</td>
 										<td>{patient.patient_last_name}</td> 
 										<td>{patient.patient_type_blood}</td> 
+										<td>{patient.patient_doctor}</td> 
 										<td><button onClick={()=>handleEditButton(patient)}>Editar</button>
 											<button onClick={() => handleDeleteButton(patient.patient_id)}>Deletar</button>
 											</td>

@@ -13,12 +13,14 @@ export const ApiService = axios.create({
       })}
       
       export function addpatients(patients) {
+        console.log(patients.value)
       return ApiService.post('patients/',
       {
           patient_id: null,
           patient_first_name: patients.patient_first_name.value,
           patient_last_name: patients.patient_last_name.value,
           patient_type_blood: patients.patient_type_blood.value,
+          patient_doctor: patients.patient_doctor.value,
       })
       .then(res => {
           return res.data
@@ -30,6 +32,7 @@ export const ApiService = axios.create({
               patient_first_name: patients.patient_first_name.value,
               patient_last_name: patients.patient_last_name.value,
               patient_type_blood: patients.patient_type_blood.value,
+              patient_doctor: patients.patient_doctor.value,
           })
           .then(res => {
               return res.data
@@ -43,37 +46,38 @@ export const ApiService = axios.create({
       
 // Doctors
 
-export function getdoctors() {
-    return ApiService.get('doctors/')
-    .then(res => {
-      return res.data
-  })}
-  
-  export function adddoctors(doctors) {
-  return ApiService.post('doctors/',
-  {
-      doctor_id: null,
-      doctor_first_name: doctors.doctor_first_name.value,
-      doctor_last_name: doctors.doctor_last_name.value,
-      doctor_type_blood: doctors.doctor_type_blood.value,
-  })
-  .then(res => {
-      return res.data
-  })}
-  
-  export  function editdoctors(doctor_id, doctors) {
-      return ApiService.put('doctors/'+doctor_id+'/',
-      {
-          doctor_first_name: doctors.doctor_first_name.value,
-          doctor_last_name: doctors.doctor_last_name.value,
-          doctor_type_blood: doctors.doctor_type_blood.value,
-      })
-      .then(res => {
-          return res.data
-      })}
-  
-  export  function deletedoctors(doctor_id) {
-      return ApiService.delete('doctors/'+doctor_id+'/')
-      .then(res => {
-          return res.data
-      })}
+        export function getdoctors() {
+            return ApiService.get('doctors/')
+            .then(res => {
+            return res.data
+        })}
+        
+        export function adddoctors(doctors) {
+        console.log(doctors.doctor_last_name.value);
+        return ApiService.post('doctors/',
+        {
+            doctor_id: null,
+            doctor_first_name: doctors.doctor_first_name.value,
+            doctor_last_name: doctors.doctor_last_name.value,
+            doctor_type_blood: doctors.doctor_type_blood.value,
+        })
+        .then(res => {
+            return res.data
+        })}
+        
+        export  function editdoctors(doctor_id, doctors) {
+            return ApiService.put('doctors/'+doctor_id+'/',
+            {
+                doctor_first_name: doctors.doctor_first_name.value,
+                doctor_last_name: doctors.doctor_last_name.value,
+                doctor_type_blood: doctors.doctor_type_blood.value,
+            })
+            .then(res => {
+                return res.data
+            })}
+        
+        export  function deletedoctors(doctor_id) {
+            return ApiService.delete('doctors/'+doctor_id+'/')
+            .then(res => {
+                return res.data
+            })}

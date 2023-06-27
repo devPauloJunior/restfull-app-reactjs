@@ -11,20 +11,24 @@ const  access = [
 
 const App = () => {
   const [ nivelUser, setNivelUser ] = useState(access[0].name);
+  const [ idDoctor, setIdDoctor ] = useState('');
 
-  const alterDoctors = () => {
-    setNivelUser(access[1].name)
+  const handleDoctorUpdate = (e) => {
+    console.log(e.target.value);
+    setIdDoctor = e.target.value;
+    setNivelUser(access[1].name);
   }
 
-  const alterPatients = () => {
-    setNivelUser(access[2].name)
+  const handlePatientUpdate = (e) => {
+    console.log(e.target.value);
+    setNivelUser(access[2].name);
   }
 
   return (
     <>
-      {nivelUser === 'Redirect' && <RedirectUser alterDoctors={alterDoctors} alterPatients={ alterPatients } />}
-      {nivelUser === 'Doctors' && <Doctors cor="vermelho"  />}
-      {nivelUser === 'Patients' && <Patients />}
+      {nivelUser === 'Redirect' && <RedirectUser handlePatientUpdate={ handlePatientUpdate } handleDoctorUpdate={handleDoctorUpdate}  />}
+      {nivelUser === 'Doctors' && <Doctors tipoDeAcesso="doctors" />}
+      {nivelUser === 'Patients' && <Patients tipoDeAcesso="patients" />}
     </>
   );
 }

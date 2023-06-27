@@ -3,7 +3,7 @@ import { getdoctors, adddoctors, editdoctors, deletedoctors } from '../Service/A
 import AddDoctors from './AddDoctors';
 import EditDoctors from './EditDoctors';
 
-const ListDoctors = () => {
+const ListDoctors = ( { tipoDeAcesso } ) => {
 	const [ doctors, setDoctors ] = useState([])
 	const [ showAddDoctorsForm, setShowAddDoctorsForm ] = useState(false)
 	const [ showEditDoctorsForm, setShowEditDoctorsForm ] = useState(false)
@@ -20,6 +20,7 @@ const ListDoctors = () => {
 	}, [])
 
 	const handleAddSubmit = (e) => {
+		e.preventDefault();
 		adddoctors(e.target)
 		.then(res => {
 			setDoctors([res])
@@ -34,6 +35,7 @@ const ListDoctors = () => {
 	}
 
 	const handleEditSubmit = (e, doctor_id) => {
+		e.precentDefault();
 		editdoctors(doctor_id, e.target)
 		.then(res => {
 			setDoctors([res])
@@ -54,13 +56,14 @@ const ListDoctors = () => {
 
 	return (
         <>
-            <h3>LISTA DE DOUTORES</h3>
+            <h3>LISTA DE PACIENTES</h3>
+			<p>Seja bem vindo <strong>{ tipoDeAcesso }</strong></p>
 			<table border={"2px"} cellPadding={"5px"}>
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Nome do Doutor</th>
-								<th>Sobrenome do Doutor</th>
+								<th>Nome do Paciente</th>
+								<th>Sobrenome do Paciente</th>
 								<th>Tipo Sanguíneo</th>
 								<th>Ação</th>
 							</tr>
@@ -80,7 +83,7 @@ const ListDoctors = () => {
 							})}
 						</tbody>	
 			</table>
-			<button onClick={() => setShowAddDoctorsForm(true)}>Adicionar Doutor</button>
+			<button onClick={() => setShowAddDoctorsForm(true)}>Adicionar Paciente</button>
 			{showAddDoctorsForm && <AddDoctors handleAddSubmit={handleAddSubmit} handleCancelButton = {handleCancelButton} />}
 			{showEditDoctorsForm && <EditDoctors handleEditSubmit={handleEditSubmit} selectedEditData = {selectedEditData}/>}
 		</>
