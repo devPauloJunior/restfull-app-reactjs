@@ -13,7 +13,8 @@ export const usePatients = () => {
 	}, []);
 
     return { 
-        patients
+        patients,
+		setPatients,
     };
 
 }
